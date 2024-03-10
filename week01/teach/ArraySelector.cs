@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public static class ArraySelector
 {
     public static void Run()
@@ -11,6 +13,24 @@ public static class ArraySelector
 
     private static int[] ListSelector(int[] list1, int[] list2, int[] select)
     {
-        return new int[0];
+        int[] output=new int[select.Length];
+        int countSelect=0;
+        int count1=0;
+        int count2=0;
+        while (countSelect < select.Length)
+        {
+            if (select[countSelect]==1)
+            {
+                output[countSelect]=list1[count1];
+                count1++;
+            } 
+            if (select[countSelect]==2)
+            {
+                output[countSelect]=list2[count2];
+                count2++;
+            } 
+            countSelect++;
+        }
+        return output;
     }
 }
