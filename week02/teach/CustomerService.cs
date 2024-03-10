@@ -11,7 +11,8 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
+        // Scenario:
+        var cs = new CustomerService(10);        
         // Expected Result: 
         Console.WriteLine("Test 1");
 

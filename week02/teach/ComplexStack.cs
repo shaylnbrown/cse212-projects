@@ -1,5 +1,6 @@
 ﻿public static class ComplexStack {
     public static bool DoSomethingComplicated(string line) {
+        //(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))
         var stack = new Stack<char>();
         foreach (var item in line) {
             if (item is '(' or '[' or '{') {
