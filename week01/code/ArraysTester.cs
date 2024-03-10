@@ -38,8 +38,18 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
-
-        return new double[0]; // replace this return statement with your own
+        double[] output=new double[length];
+        //Sets first number in list as the number itself
+        output[0]=number;
+        //Sinc ethe first number in the list is already defined, start at 1 (not 0)
+        int count = 1;
+        while (count < output.Length)
+        {
+            //We use (count + 1) because the multiplier needs to be one more than its position in the list.
+            output[count]=number*(count+1);
+            count++;
+        }
+        return output;
     }
     
     /// <summary>
@@ -56,6 +66,23 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
-
+        //1-5-3-9
+        int size=data.Count;
+        int count=size-amount;
+        //Starting at count, adds values to the end of data
+        while (count < size)
+        {
+            data.Add(data[count]);
+            count++;
+        } 
+        //Starting at 0, adds values up to teh amount specified
+        count=0;
+        while (count < (size-amount))
+        {
+            data.Add(data[count]);
+            count++;
+        } 
+        //Removes original values from the front    
+        data.RemoveRange(0,size);
     }
 }
