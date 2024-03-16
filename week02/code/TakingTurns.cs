@@ -16,7 +16,7 @@
         while (players.Length > 0)
             players.GetNextPerson();
         // Defect(s) Found: 
-
+        // In the PeronQue class, the data was being held in a list, not a Queue. I changed the data to a queue and altered the Enqueue and Dequeue code accodingly. Original code was left in place as comments.
         Console.WriteLine("---------");
 
         // Test 2
@@ -29,17 +29,16 @@
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
         for (int i = 0; i < 5; i++) {
-            players.GetNextPerson();
+            players.GetNextPerson();            
             // Console.WriteLine(players);
-        }
-
+        }        
         players.AddPerson("George", 3);
         // Console.WriteLine(players);
         while (players.Length > 0)
             players.GetNextPerson();
 
         // Defect(s) Found: 
-
+        //No defects were found in the results. If there were defects, it is possible that I corrected them in previous tests
         Console.WriteLine("---------");
 
         // Test 3
@@ -57,7 +56,9 @@
             // Console.WriteLine(players);
         }
         // Defect(s) Found: 
-
+        //The GetNextPerson method did not account for infinite turns. It only Enqueued someone if "person.Turns > 1" which does not allow for 0. 
+        //I added a readonly bool varibale "Infinite" to the Person class. In the constructor, it makes Infinite true if the ORIGINAL turn count was 0. 
+        //Now it will Enqueue a person if person.Turns > 1" OR person.Infinite=true
         Console.WriteLine("---------");
 
          // Test 4
@@ -74,6 +75,7 @@
             // Console.WriteLine(players);
         }
         // Defect(s) Found: 
+        //No defects were found in the results. If there were defects, it is possible that I corrected them in previous tests
 
         Console.WriteLine("---------");
 
@@ -84,5 +86,6 @@
         players = new TakingTurnsQueue();
         players.GetNextPerson();
         // Defect(s) Found:
+        //No defects were found in the results
     }
 }

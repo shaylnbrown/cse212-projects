@@ -2,8 +2,8 @@
 /// A basic implementation of a Queue
 /// </summary>
 public class PersonQueue {
-    private readonly List<Person> _queue = new();
-
+    //private readonly List<Person> _queue = new();
+    private readonly Queue<Person> _queue = new();
     public int Length => _queue.Count;
 
     /// <summary>
@@ -11,12 +11,14 @@ public class PersonQueue {
     /// </summary>
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person) {
-        _queue.Insert(0, person);
+        //_queue.Insert(0, person);
+        _queue.Enqueue(person);
     }
 
     public Person Dequeue() {
-        var person = _queue[0];
-        _queue.RemoveAt(0);
+        //var person = _queue[0];
+        var person = _queue.Dequeue();
+        //_queue.RemoveAt(0);
         return person;
     }
 
