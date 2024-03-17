@@ -1,5 +1,6 @@
 public class Translator
 {
+    Dictionary<string, string> _wordMatch=new Dictionary<string,string>();
     public static void Run()
     {
         var englishToGerman = new Translator();
@@ -25,6 +26,7 @@ public class Translator
     public void AddWord(string fromWord, string toWord)
     {
         // ADD YOUR CODE HERE
+        _wordMatch.Add(fromWord,toWord);
     }
 
     /// <summary>
@@ -35,6 +37,6 @@ public class Translator
     public string Translate(string fromWord)
     {
         // ADD YOUR CODE HERE
-        return "";
+        return _wordMatch[fromWord];
     }
 }

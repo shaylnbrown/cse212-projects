@@ -25,6 +25,13 @@
     private static int CountDuplicates(int[] data)
     {
         // Add code here.
-        return 0;
+        HashSet<int> test = new HashSet<int>();
+        int x=0;
+        while (x < data.Length)
+        {
+            test.Add(data[x]);
+            x++;
+        }
+        return data.Length-test.Count;
     }
 }
